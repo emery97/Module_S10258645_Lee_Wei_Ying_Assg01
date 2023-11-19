@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<head>
+  <meta charset="UTF-8">
+  <title>The Ronans</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--profile icon link-->
+    <script src="https://kit.fontawesome.com/85b6a0f764.js" crossorigin="anonymous"></script>
+    <!--content font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <head>
+    <div class = "sale-bar">
+      <a  href="index.html">
+        <h3>12.12 SALE!! 30% OFF ENTIRE WEBSITE</h3>
+      </a> 
+    </div>
+  </head>
+  
+  <nav>
+    <div class="topnav">
+      <!-- Insert logo image -->
+      <div class = "logo">
+        <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+      </div>
+      <!-- Define navigation links and dropdown -->
+      <div class="topnav" >
+        <a href="index.html" >Home</a>
+        <a href="collections">Collections</a>
+        <!-- Dropdown menu -->
+        <div class="dropdown" >
+          <button class="dropbtn">Shop</button>
+          <div class="dropdown-content">
+            <a href="shop-all">Shop All</a>
+            <a href="best-sellers">Best Sellers</a>
+            <a href="back-in-stock">Back in Stock</a>
+            <a href="shoulder-bags">Shoulder Bags</a> 
+          </div>
+        </div>
+        <a href="about-us">About Us</a>
+        <a href="sale">Sale</a>
+    </div>
+    <!--search bar-->
+    <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
+      <i class="fa fa-search" style = "font-size:30px"></i>
+    </button>
+    <form class="search-container" id="search-container">
+      <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
+      <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
+    </form>
+    <!--profile-->
+    <a class = "profile" href="login.html">
+      <i class="fa-regular fa-user" style="font-size:30px" ></i>
+    </a>
+  </nav>
+
+  <main>
+
+    <h1 id="login">Login</h1>
+    <form class = "email">
+      <input type="email" placeholder="Email: " name = "email" autocomplete="off" required>
+    </form>
+    <br>
+    <form class = "password">
+      <input type="password" placeholder="Password: " name = "password" autocomplete="off" required>
+    </form>
+    <a href = "#">
+      <p id="forgot-password">Forgot Your Password</p>
+    </a><br>
+    <button class = "submit"> Submit</button><br>
+    <a href = "#">
+      <p id="create-account">Create Account</p>
+    </a>
+
+  </main>
+
+  <footer>
+    <!--first half of footer - WHY THE RONANS? -->
+    <div class="why-ronans">
+      <h2>WHY THE RONANS?</h2><br>
+      <h1>Style + Utility</h1><br>
+      <p>
+        At The Ronans, we blend chic aesthetics with practical functionality in our bags. ✨<br>
+        No more compromising between style and purpose.💗<br>
+        Ronan Bags offer the elegance you crave without sacrificing the everyday usability you deserve.✌️ </p>
+    </div>
+    <div class="bottom-page">
+      <ul class="shop-list">
+        <li class = "SHOP"><a href="index.html">Shop</a></li>
+          <li><a href="#">Shop All</a></li>
+          <li><a href="#">Best Sellers</a></li>
+          <li><a href="#">Back In Stock</a></li>
+          <li><a href="#">Shoulder Bags</a></li>
+      </ul>
+      <ul class="about-list">
+          <li class = "ABOUT"><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class = "footer-logo">
+          <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+          <div style="clear: both;"></div>
+      </div>
+
+      <div class="social-media-icons">
+        <div class="instagram">
+          <a href="https://www.instagram.com/">
+            <i class="fa-brands fa-instagram" style="color: #ffffff; font-size:20px;"></i>
+          </a>
+        </div>
+        <div class="pinterest">
+          <a href="https://www.pinterest.com/">
+            <i class="fa-brands fa-pinterest" style="color: #ffffff; font-size:20px;"></i>             
+          </a>
+        </div>
+        <div class="tiktok">
+          <a href="https://www.tiktok.com/">
+            <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size:20px;"></i>             
+          </a>
+        </div>
+        </div>
+        <br><hr class = "break-line">
+        <p class = "country-region">Country / Region</p>
+        <div class="custom-dropdown">
+          <select class = "country-button">
+            option value="Singapore">Singapore | SGD </option>
+              <option value="Singapore">Malaysia | MYR </option>
+              <option value="Singapore">USA | USD </option>
+              <option value="Singapore">China | YUAN </option>
+          </select>
+        </div>
+        <div class="credit-cards">
+          <i class="fa-brands fa-cc-visa" id="credit-intervals" style="color: #fafafa; font-size:30px;"></i>
+          <i class="fa-brands fa-cc-mastercard"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
+          <i class="fa-brands fa-cc-amex"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
+      </div>
+      <br><p style="margin-top:50px;">&copy; 2023 The Ronans. All rights reserved.</p>
+    </div>
+</footer>
+</body>

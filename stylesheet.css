@@ -1,0 +1,603 @@
+/* Reset default padding and margin for the entire page */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.container {
+    width: 100%;
+    max-width: 100%; /* Optional: Set a max-width if needed */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Targets all elements on the page */
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sale-bar {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: #ECFFB0;
+    height: 45px;
+    text-decoration: none;
+}
+.sale-bar h3{
+    text-decoration: none;
+    color: black;
+}
+.sale-bar a:hover h3 {
+    text-decoration: underline;
+}
+
+/* style for the logo*/
+.logo img{
+    height:100px;
+    width:auto;
+    max-width:150px;
+    cursor: pointer;
+}
+
+/* Style for the bag image */
+img {
+    float: left; /* Float the image to the left */
+    padding-left:20px;
+    height: 100px; /* Set image height */
+    width: 150px; /* Set image width */
+}
+
+/* Style for the top navigation bar */
+.topnav {
+    /* Banner styling */
+    background-color: #FFE5D9;
+    color: #000; /* Text color */
+    height: 100px; /* Set the height of the top navigation bar */
+    display: flex;
+    align-items: center;
+}
+
+.topnav a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Style for links in the top navigation bar */
+.topnav a {
+    /* Link styling */
+    color: #000; /* Text color */
+    padding: 0 10px;  /* Set padding around links */
+    text-decoration: none; /* Remove underlines from links */
+    font-size: 18px; /* Set font size for links */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Style for the dropdown container */
+.dropbtn {
+    background-color: #FFE5D9;
+    color: black;
+    padding: 40px 16px; 
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    max-height: 10px;
+    padding-top: 18px ;
+}
+.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white ;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 10%;
+    width: 100px;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    text-decoration: underline;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* search icon*/
+
+.search-button{
+    background-color: transparent;
+    cursor: pointer;
+    border:none;
+    display:flex;
+    justify-content: flex-end;
+    float: right;
+    padding-left:800px;
+}
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color:transparent;
+    padding: 12px 20px 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 100%;
+    background-color: white;
+}
+form {
+    display: flex;
+    justify-content: flex-end; /*changes the direction in the animation*/
+    margin: 10px;
+}
+
+#search-container {
+    width: 300px;
+    display: none;
+    position: fixed;
+    top: 8%;
+    left: 70%;
+    transform: translateX(100%);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+    animation: slideRight 0.5s ease-out forwards;
+}
+
+#search-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin:0;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translate(100%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+#search-input {
+    width: 200px;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#search-button-inside{
+    padding: 8px;
+    cursor: pointer;
+    background-color: transparent;
+    border:none;
+}
+
+#toggleButton {
+    display: block;
+}
+
+#toggleButton,
+#search-container {
+    transition: opacity 0.5s ease-out;
+}
+
+
+#toggleButton.hidden {
+    opacity: 0;
+}
+
+/* profile */
+.profile{
+    font-size: 30px;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+    margin-left:15px
+}
+
+/* Style for the picture slideshow */
+/* Slideshow container styling */
+.slideshow-container {
+    max-width: 3000px;
+    height: 500px;
+    position:static;
+    margin-left: 0;
+    padding-left:0;
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color:  white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev{
+    left:10px;
+}
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: grey;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .dot:hover {
+    background-color: black;
+}
+.slideshow-container img {
+    height: 100%;
+    width: 100%;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px;
+    }
+}
+
+/* main content */
+aside h2{
+    padding-left:20px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 40px;
+    font-weight :100;
+}
+
+/* buttons */
+.choose-options-button{
+    color: black;
+    width:300px;
+    height:65px;
+    border:solid #FFE5D9;
+    border-radius:50px;
+    background-color: transparent;
+    font-family: 'Oxygen', sans-serif;
+    cursor: pointer;
+}
+
+.choose-options-button:hover {
+    background-color:#FFE5D9 ;
+}
+.add-to-cart-location{
+    margin-left:110px;
+}
+.bag2-add-to-cart-location{
+    margin-left:80px;
+}
+.choose-options-location{
+    margin-right:20px;
+}
+
+/* bags */
+.bag-container {
+    display: inline-block;
+    vertical-align: top; 
+    margin-right: 150px;
+}
+
+.bag-options {
+    white-space: nowrap; /* Prevent containers from wrapping to the next line */
+}
+
+#bag1-button{
+    width:300px;
+    height:auto;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left:40px;
+    margin-top:20px;
+    background-color: transparent;
+}
+.bag1 {
+    width: 100%; /* Make the image take up 100% of the button's width */
+    height: auto; /* Automatically adjust the height based on the aspect ratio of the image */
+    border: none;
+    border-radius: 20px;
+}
+.bag-1-content{
+    padding-left: 70px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 17px;
+    font-weight :100;
+
+}
+.stars i,p{
+    font-size:15px !important;
+    display:inline-block;
+}
+
+#bag2-button{
+    width:300px;
+    height:auto;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left:40px;
+    margin-top:45px;
+    background-color: transparent;
+}
+.bag2 {
+    width: 100%; /* Make the image take up 100% of the button's width */
+    height: auto; /* Automatically adjust the height based on the aspect ratio of the image */
+    border: none;
+    border-radius: 20px;
+}
+.bag-2-content{
+    padding-top:25px;
+    padding-left: 90px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 17px;
+    font-weight :100;
+
+}
+
+#bag3-button{
+    width:400px;
+    height:auto;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left:40px;
+    margin-top:40px;
+    background-color: transparent;
+}
+.bag3 {
+    width: 100%; /* Make the image take up 100% of the button's width */
+    height: auto; /* Automatically adjust the height based on the aspect ratio of the image */
+    border: none;
+    border-radius: 20px;
+}
+.bag-3-content{
+    padding-left: 130px;
+    padding-top:10px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 17px;
+    font-weight :100;
+
+}
+.button-placement{
+    text-align: center;
+    padding: 20px;
+}
+.view-more-button{
+    font-family: 'Oxygen', sans-serif;
+    color:black;
+    align-items: center;
+    height:50px;
+    width:110px;
+    border-radius: 90px;
+    border:none;
+    background-color:#FFE5D9;
+    cursor: pointer;
+}
+.view-more-button:hover{
+    background-color: transparent;
+    border:2px solid #FFE5D9;
+}
+
+/* first half of footer - WHY THE RONANS? */
+.why-ronans{
+    height:300px;
+    width:100%;
+    background-color: #FFE5D9 ;
+}
+.why-ronans h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 30px;
+}
+.why-ronans h1{
+    font-family: 'Oxygen', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+.why-ronans p{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    line-height: 3em;
+}
+
+/* second half of footer- all the links */
+.bottom-page {
+    width: 100%;
+    height: 600px;
+    background-color: #819c8e;
+    float: left;
+}
+
+ul {
+    list-style-type: none; /* remove bullet point */
+    font-family: 'Oxygen', sans-serif;
+    padding: 0; 
+    display: inline-block; /* Display UL elements inline */
+    vertical-align:top; /* Align to the top of the line */
+}
+
+.shop-list, .about-list{
+    line-height: 30px;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+.shop-list a , .about-list a{
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    color:#000;
+}
+.SHOP , .ABOUT{
+    font-size:20px;
+    padding-bottom: 6px;
+}
+.shop-list a:hover, .about-list a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footer-logo {
+    float:right;
+    margin-right: 90px;
+}
+.logo-size{
+    height:150px;
+    width:auto; 
+}
+.logo-size:hover{
+    cursor: pointer;
+}
+
+/* social media icons */
+.social-media-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.instagram ,.pinterest , .tiktok{
+    margin-left:20px;
+    display: flex;
+}
+footer .break-line{
+    margin-top:50px;
+    border-color:white;
+    border-width: 1px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    background-color: transparent !important; 
+}
+.country-region{
+    font-family: 'Oxygen', sans-serif;
+    margin-left: 50px;
+    margin-top:20px;
+}
+.country-button{
+    height:20px;
+    width:10%;
+    border-radius: 9px;
+    margin-left: 45px;
+    margin-top:5px;
+    background-color: transparent;
+    border-color:solid white;
+}
+.country-button option{
+    text-align: center;
+    background-color: transparent;
+}
+.credit-cards{
+    float:right;
+    margin-right:50px;
+}
+#credit-intervals{
+    margin-left:20px
+}
+
+/*PROFILE PAGE*/
+
+#login {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 45px;
+    margin: 100px; 
+    text-align: center;
+}
+.email input[type=email] {
+    width:600px;
+    height:50px;
+    margin-right: 450px;
+    font-size: 20px;
+    text-align: left;
+    border-radius: 90px;
+    padding:15px;
+}
+
+.password input[type=password] {
+    width:600px;
+    height:50px;
+    margin-right: 450px;
+    font-size: 20px;
+    text-align: left;
+    border-radius: 90px;
+    padding:15px;
+}
+#forgot-password , #create-account{
+    font-family: 'Oxygen', sans-serif;
+    color: black;
+    text-decoration: underline;
+    font-size: 50px;
+    margin-left: 475px; 
+    margin-bottom: 30px;
+    text-align: center;
+}
+.submit{
+    height:45px;
+    width:100px;
+    border-radius: 20px;
+    margin-left: 705px;
+    border: none;
+    background-color: #af9a88;
+    color:white;
+}
+.submit:hover{
+    cursor: pointer;
+}
+#create-account{
+    padding-bottom: 8px !important;
+    padding-left: 230px;
+    padding-top: 6px;
+}
+#forgot-password:hover , #create-account:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
