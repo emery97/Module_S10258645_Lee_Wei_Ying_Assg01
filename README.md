@@ -23,12 +23,32 @@ Wireframe PDF:
 [embed]http://example.com/file.pdf[/embed]
 
 # Features
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+## Main Page Features
+1. I have a promotional bar that will bring users to the main page where all the different collections of bags are at
+2. when the user click on the logo, it will bring them back to the main page
+3. I have quick links on my navigation bar that allows easy navigation for users. Specifically for **Shop** I've got a drop down menu
+4. whenever users hover over my quick links the quick link will be underlined, this will allow the user to clearly know his choice of quick link
+5. I have a search button on my navigation bar, when the user click on it, the search bar come up and in the search bar there is a mini search button that allows users to submit their search requests to the system
+6. I have a profile icon beside the search bar that navigates users to the profile page
 
-Existing Features
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+## Profile Page features
+1. the navigation bar, promotion bar and icons work the same here
+2.The email and password fields each demand input of their respective types, facilitating a built-in validation check for enhanced security
 
-Features Left to Implement
-Another feature idea
+# Credits
+Slideshow picture 1: Photo by [Trình Minh Thư](https://unsplash.com/photos/brown-leather-handbag-on-green-pine-tree-ScYGyGhA9HQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+
+Slideshow picture 2: Photo by [Trình Minh Thư](https://unsplash.com/photos/brown-leather-sling-bag-hanged-on-green-and-red-clothes-hanger-MQOA0n3chA8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+
+Slideshow picture 3: Photo by [Trình Minh Thư](https://unsplash.com/photos/red-leather-handbag-on-green-pine-tree-twN2viFvWd0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+
+
+
+Product picture 1:[Black Shoulder Bag](https://dukesavenue.com/autumn-capsule-wardrobe/)
+
+Product picture 2:[Black Snake Skin Baguette Bag](https://www.shopemeryrose.com/productDetails/100300?utm_source=pinterest.com&utm_medium=cpc&utm_campaign=womenbags_emeryrose_pinadsusdpapcmpaswbag09201015489&url_from=womenbags_emeryrose_pinadsusdpapcmpaswbag09201015489&epik=dj0yJnU9MGg4RDhDS3pzNU96S1cxRjRXOUdwV1FaakpMNTU3b3MmcD0wJm49RVc2cEkxS09vNFFiR1lYWHVNellidyZ0PUFBQUFBR1ZZZEs4)
+
+Product picture 3:[Black Ruffle Bag](https://ultrasellershoes.com/products/severiana-handbags?variant=35067090698391&utm_source=pinterest&utm_medium=social)
+
+
+
