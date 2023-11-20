@@ -18,9 +18,7 @@ Good Totes:
 Wireframe Sharing Link:
 [wei ying's wireframe](https://www.figma.com/file/TBl6ljK5zVuPtn56uk57Tq/Module_S10258645_Lee_Wei_Ying_Assg1_wiref?type=design&node-id=0%3A1&mode=design&t=5yIWJJLVONeaJbl4-1)
 
-Wireframe PDF:
-[wei ying's wireframe][embed]C:/Users/weiyi/Downloads/Module_S10258645_Lee_Wei_Ying_Assg1_wiref.pdf[/embed]
-[embed]http://example.com/file.pdf[/embed]
+Wireframe PDF link: file:///C:/Users/weiyi/Desktop/Y1S2%20(IT)/front%20end%20development/Module_S10258645_Lee_Wei_Ying_Assg01/Module_S10258645_Lee_Wei_Ying_Assg1_wiref.pdf
 
 # Features
 ## Main Page Features
