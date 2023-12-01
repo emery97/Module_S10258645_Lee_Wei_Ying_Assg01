@@ -6,7 +6,8 @@
         <title>The Ronans | Products </title>
         <!--for responsiveness-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <!--link to external JS file-->
+        <script src="script.js" defer></script>
         <!-- Link to an external stylesheet (CSS) file -->
         <link rel="stylesheet" href="stylesheet.css">
         <!--icon on top of the browser-->
@@ -84,87 +85,103 @@
                
            </div>  
        </nav>
-         <!--RESPONSIVENESS-->
-    <div class = "mobile-container">
-        <div class = "mobile-icons">
-            <!-- LOGO -->
-            <div class = "logo">
-                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+       <!--RESPONSIVENESS-->
+        <div class = "mobile-container">
+            <div class = "mobile-icons">
+                <!-- LOGO -->
+                <div class = "logo">
+                    <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+                </div>
+                <!--profile-->
+                <a class = "mobile-profile" href="login.html">
+                    <i class="fa-regular fa-user" ></i>
+                </a>
+                <!--cart-->
+                <a class="mobile-cart" href="#">
+                    <i class="fa-solid fa-cart-shopping" ></i>
+                </a>
+                <a  class="hamburger" onclick=" toggleMobileNavigation()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-          <!--profile-->
-          <a class = "mobile-profile" href="login.html">
-            <i class="fa-regular fa-user" ></i>
-          </a>
-          <!--cart-->
-          <a class="mobile-cart" href="#">
-            <i class="fa-solid fa-cart-shopping" ></i>
-          </a>
-          <a  class="hamburger" onclick="toggleMobileNavigation()">
-              <i class="fa fa-bars"></i>
-          </a>
+            <div class="row">
+                <div class="left" >
+                    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+                    <ul id="myMenu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Shop All</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Back In Stock</a></li>
+                        <li><a href="#">Shoulder Bags</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="left" >
-          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-          <ul id="myMenu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Collections</a></li>
-            <li><a href="#">Shop All</a></li>
-            <li><a href="#">Best Sellers</a></li>
-            <li><a href="#">Back In Stock</a></li>
-            <li><a href="#">Shoulder Bags</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Sale</a></li>
-          </ul>
-        </div>
-      </div>
         <!--main content-->
         <main>
+
             <div class="product-container">
                 <div class="mySlides">
-                    <img src="images/products/bag_2.png" style="width:400px;height:500px;" alt = "Black Snake Skin Baguette Bag">
+                    <img src="images/products/bag_2.png" id = "product-bag2"  alt = "Black Snake Skin Baguette Bag">
                 </div>
                 <div class="mySlides">
                   <img src="images/products/bag_2_items.png" style="width:500px;height:500px;" alt = "items">
                 </div>
+                
+                <div class="mobile-product-row">
+                    <a class="mobile-previous" onclick="plusCustomSlides(-1)">❮</a>
+                    <div class="column">
+                        <img class="demo" id="small-product-pics" src="images/products/bag_2_items.png" alt="Black Snake Skin Baguette Bag" onclick="currentCustomSlide(1)">
+                    </div>
+                    <div class="column">
+                        <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt="items" onclick="currentCustomSlide(2)">
+                    </div>
+                    <a class="mobile-forward" onclick="plusCustomSlides(1)">❯</a>
+                </div>
+                
+                <div class = "product-text">
+                    <h2 id="title" style = "font-size: 30px;">Black Snake Skin Baguette Bag</h2>
+                    <p id="product-details">
+                        SGD 55.00<br>
+                        Introducing Black Snake Skin Baguette Bag🌟 <br>
+                        Designed as your all-in-one mobile office, it features a dedicated slot for your iPad or documents, <br>
+                        plus two inner mesh pockets for wires and stationary. With a plush velvet lining, your laptop will experience unmatched comfort. <br>
+                        Stylish, functional, and cozy – it's more than just a bag, it's a luxury workspace on the go! 💼✨<br><br>
+    
+    
+                        Check out all the colours <strong>here</strong>
+                    </p>
+                    <div class="color-button">
+                        <span class="lime" onclick="boldButton(this)"></span>
+                        <span class="purple" onclick="boldButton(this)"></span>
+                        <span class="black" onclick="boldButton(this)"></span>
+                    </div>
+                    <div id = "quantity-box" class = "quantity-box">
+                        <input value=""  min="1"  type="number" step="1" name="quantity" id="quantity">
+                    </div>
+                    <div class="bag2-add-to-cart-location" id = "add-to-cart-product-page">
+                        <button class="choose-options-button" id ="product-page-button" >Add To Cart</button>
+                    </div>
+                </div>
             </div>
-            <div class = "product-text">
-                <h2 id="title" style = "font-size: 30px;">Black Snake Skin Baguette Bag</h2>
-                <p id="product-details">
-                    SGD 55.00<br>
-                    Introducing Black Snake Skin Baguette Bag🌟 <br>
-                    Designed as your all-in-one mobile office, it features a dedicated slot for your iPad or documents, <br>
-                    plus two inner mesh pockets for wires and stationary. With a plush velvet lining, your laptop will experience unmatched comfort. <br>
-                    Stylish, functional, and cozy – it's more than just a bag, it's a luxury workspace on the go! 💼✨<br><br>
-
-
-                    Check out all the colours <strong>here</strong>
-                </p>
-                <div class="color-button">
-                    <span class="lime" onclick="boldButton(this)"></span>
-                    <span class="purple" onclick="boldButton(this)"></span>
-                    <span class="black" onclick="boldButton(this)"></span>
-                </div>
-                <div id = "quantity-box" class = "quantity-box">
-                    <input value=""  min="1"  type="number" step="1" name="quantity" id="quantity">
-                </div>
-                <div class="bag2-add-to-cart-location" id = "add-to-cart-product-page">
-                    <button class="choose-options-button" id ="product-page-button" >Add To Cart</button>
-                </div>
-            </div>
+            
 
 
             <div class="product-row">
-                <a class="previous" onclick="plusSlides(-1)">❮</a>
-                <a class="forward" onclick="plusSlides(1)">❯</a>
+                <a class="previous" onclick="plusCustomSlides(-1)">❮</a>
+                <a class="forward" onclick="plusCustomSlides(1)">❯</a>
                 <div class="column">
-                    <img class="demo" id = "small-product-pics" src="images/products/bag_2_items.png" alt = "Black Snake Skin Baguette Bag" style="width:100px;height:100px;"  onclick="currentSlide(1)">
+                    <img class="demo" id="small-product-pics" src="images/products/bag_2_items.png" alt="Black Snake Skin Baguette Bag" style="width:100px;height:100px;" onclick="currentCustomSlide(1)">
                 </div>
                 <div class="column">
-                    <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt = "items"style="width:100px;height:100px;"  onclick="currentSlide(2)">
+                    <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt="items" style="width:100px;height:100px;" onclick="currentCustomSlide(2)">
                 </div>
             </div>
+            
+            
         </main>
 
         <footer>
@@ -232,35 +249,6 @@
                 <br><p style="margin-top:50px;">&copy; 2023 The Ronans. All rights reserved.</p>
             </div>
         </footer>
-        <script>
-            let slideIndex = 1;         // show first slide
-            showSlides(slideIndex);
-
-            function plusSlides(n) {    // update slide
-            showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {  // shows specific slide
-            showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("demo");
-            let captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}        // wrap around logic
-            if (n < 1) {slideIndex = slides.length}        // wrap around logic
-            for (i = 0; i < slides.length; i++) {          // hide all the slide
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {            // remove active class 
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            }
-        </script>
     </body>
 </html>    
     

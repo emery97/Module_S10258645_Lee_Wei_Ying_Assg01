@@ -534,12 +534,15 @@ footer .break-line{
     margin: 100px; 
     text-align: center;
 }
- .email-container, .password-container {
+ .email-password-container{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    padding-bottom: 10px;
 }
 
-.email-container input[type=email] ,.password-container input[type=password]{
+.email-password-container input[type=email] ,.email-password-container input[type=password]{
     width:600px;
     height:50px;
     font-size: 20px;
@@ -589,6 +592,10 @@ footer .break-line{
 main{
 max-height:1500px
 }
+#product-bag2{
+    width:400px;
+    height:500px;
+}
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
 cursor: pointer;
@@ -634,7 +641,7 @@ cursor: pointer;
 
 /* Add a transparency effect for thumnbail images */
 .demo {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 #small-product-pics, #item-small-product-pics{
     background-color: transparent;
@@ -645,7 +652,7 @@ cursor: pointer;
 
 .active,
 .demo:hover {
-opacity: 1;
+opacity:1;
 }
 
 /* PRODUCT DETAILS */
@@ -658,6 +665,7 @@ opacity: 1;
     flex-direction: column;
     justify-content: flex-end;
     padding-top: 90px;
+    padding-left: 30%;
 }
 #add-to-cart-product-page{
     display: flex;
@@ -757,7 +765,7 @@ opacity: 1;
     margin: 20px;
 }
 
-.row , .mobile-container,.mobile-contact{
+.row , .mobile-container,.mobile-contact,.mobile-product-row{
     display:none;
 }
 
@@ -826,7 +834,7 @@ opacity: 1;
         display:none;
     }
 
-    /* PRODUCT PAGE */
+    /* INDEX PRODUCT PAGE */
     aside h2{
         display: flex;
     }
@@ -885,5 +893,61 @@ opacity: 1;
         border: solid 1px;
         width:96%;
     }
+    /* PRODUCT PAGE*/
+    .product-row{
+        display: none;
+    }
+    .product-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .product-text{
+        padding: 0 ;
+        display: flex;
+        justify-content: center;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+    #product-bag2{
+        flex-direction: column;
+        width:100%;
+        object-fit: contain;
+    }
+    .mobile-product-row {
+        display: flex;
+        align-items: center; /* Align items vertically in the center */
+    }
+    
+    .mobile-previous,
+    .mobile-forward {
+        cursor: pointer;
+        width: auto;
+        padding: 16px;
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        user-select: none;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-forward {
+        margin-left: 10%; /* Push forward arrow to the right */
+    }
+    .mobile-previous{
+        margin-left: 10px;
+    }
+    
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Align items horizontally in the center */
+    }
+    
+    /* Adjust the styling of your demo images if needed */
+    .demo {
+        width: 100px;
+        height: 100px;
+    }
+
 
 }
