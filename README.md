@@ -18,7 +18,9 @@ Good Totes:
 Wireframe Sharing Link:
 [wei ying's wireframe](https://www.figma.com/file/TBl6ljK5zVuPtn56uk57Tq/Module_S10258645_Lee_Wei_Ying_Assg1_wiref?type=design&node-id=0%3A1&mode=design&t=5yIWJJLVONeaJbl4-1)
 
-Wireframe PDF link: file:///C:/Users/weiyi/Desktop/Y1S2%20(IT)/front%20end%20development/Module_S10258645_Lee_Wei_Ying_Assg01/Module_S10258645_Lee_Wei_Ying_Assg1_wiref.pdf
+Wireframe PDF:
+[wei ying's wireframe][embed]C:/Users/weiyi/Downloads/Module_S10258645_Lee_Wei_Ying_Assg1_wiref.pdf[/embed]
+[embed]http://example.com/file.pdf[/embed]
 
 # Features
 ## Main Page Features
@@ -38,16 +40,15 @@ Slideshow picture 1: Photo by [Trình Minh Thư](https://unsplash.com/photos/bro
 
 Slideshow picture 2: Photo by [Trình Minh Thư](https://unsplash.com/photos/brown-leather-sling-bag-hanged-on-green-and-red-clothes-hanger-MQOA0n3chA8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-Slideshow picture 3: Photo by [Trình Minh Thư](https://unsplash.com/photos/red-leather-handbag-on-green-pine-tree-twN2viFvWd0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) 
+Slideshow picture 3: Photo by [Trình Minh Thư](https://unsplash.com/photos/red-leather-handbag-on-green-pine-tree-twN2viFvWd0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-<br>
+
 
 Product picture 1:[Black Shoulder Bag](https://dukesavenue.com/autumn-capsule-wardrobe/)
+
 Product picture 2:[Black Snake Skin Baguette Bag](https://www.shopemeryrose.com/productDetails/100300?utm_source=pinterest.com&utm_medium=cpc&utm_campaign=womenbags_emeryrose_pinadsusdpapcmpaswbag09201015489&url_from=womenbags_emeryrose_pinadsusdpapcmpaswbag09201015489&epik=dj0yJnU9MGg4RDhDS3pzNU96S1cxRjRXOUdwV1FaakpMNTU3b3MmcD0wJm49RVc2cEkxS09vNFFiR1lYWHVNellidyZ0PUFBQUFBR1ZZZEs4)
 
 Product picture 3:[Black Ruffle Bag](https://ultrasellershoes.com/products/severiana-handbags?variant=35067090698391&utm_source=pinterest&utm_medium=social)
-
-Product picture 4:[Faux leather cross bag](https://www.marksandspencer.com/faux-leather-cross-body-bag/p/clp60547840?color=BLACK#intid=pid_pg1pip48g4r1c2|prodflag_As%20Seen%20On%20TV)
 
 
 

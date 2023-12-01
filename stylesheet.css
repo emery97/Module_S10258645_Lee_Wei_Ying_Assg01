@@ -1,7 +1,14 @@
-/* Reset default padding and margin for the entire page */
-body, html {
+/* Targets all elements on the page */
+* { 
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* Reset default padding and margin for the entire page */
+body, html,main {
+    padding: 0;
+    margin:0;
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
@@ -10,32 +17,21 @@ body, html {
     max-width: 100%; /* Optional: Set a max-width if needed */
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Targets all elements on the page */
-* { 
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.sale-bar {
+.sale-bar a {
+    text-decoration: none;
     display: flex; /* Use Flexbox */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     background-color: #ECFFB0;
     height: 45px;
-    text-decoration: none;
 }
 .sale-bar h3{
     text-decoration: none;
     color: black;
 }
-.sale-bar a:hover h3 {
+.sale-bar:hover a{
     text-decoration: underline;
+    text-decoration-color: black;
 }
 
 /* style for the logo*/
@@ -49,7 +45,7 @@ body {
 /* Style for the bag image */
 img {
     float: left; /* Float the image to the left */
-    padding-left:20px;
+    padding-left:0px;
     height: 100px; /* Set image height */
     width: 150px; /* Set image width */
 }
@@ -59,25 +55,45 @@ img {
     /* Banner styling */
     background-color: #FFE5D9;
     color: #000; /* Text color */
-    height: 100px; /* Set the height of the top navigation bar */
     display: flex;
+    flex-direction: row;
     align-items: center;
 }
-
+.topnav-contents{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
 .topnav a:hover {
     text-decoration: underline; /* Underline links on hover */
 }
 
 /* Style for links in the top navigation bar */
-.topnav a {
+.topnav-contents a {
     /* Link styling */
     color: #000; /* Text color */
     padding: 0 10px;  /* Set padding around links */
     text-decoration: none; /* Remove underlines from links */
     font-size: 18px; /* Set font size for links */
     font-family: 'Times New Roman', Times, serif;
+    flex-grow:3;
 }
-
+/* Ensure the icons and words are on the right */
+.topnav-contents,
+.top-nav-icons {
+    margin-left: auto; /* Push both to the right */
+}
+.top-nav-icons a{
+    color: black;
+    padding-right: 10px;
+    text-decoration: none;
+}
+.top-nav-icons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
 /* Style for the dropdown container */
 .dropbtn {
     background-color: #FFE5D9;
@@ -113,45 +129,37 @@ img {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 /* search icon*/
-
 .search-button{
     background-color: transparent;
     cursor: pointer;
     border:none;
-    display:flex;
-    justify-content: flex-end;
-    float: right;
-    padding-left:800px;
+    margin-right: 20px;
 }
-input[type=text] {
+#search-button input[type=text] {
     width: 130px;
     box-sizing: border-box;
-    border: none;
     border-radius: 10px;
     font-size: 16px;
     background-color:transparent;
     padding: 12px 20px 12px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+
 }
-input[type=text]:focus {
+.search-button input[type=text]:focus {
     width: 100%;
     background-color: white;
 }
-form {
+.search-container form {
     display: flex;
-    justify-content: flex-end; /*changes the direction in the animation*/
-    margin: 10px;
+    justify-content: flex-start; /*changes the direction in the animation*/
 }
 
-#search-container {
-    width: 300px;
+#search-container, #login-search-container {
+    width: 25vw;
     display: none;
     position: fixed;
-    top: 8%;
-    left: 70%;
+    top: 11%;
+    right:9%;
     transform: translateX(100%);
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -160,12 +168,10 @@ form {
     border-radius: 5px;
     animation: slideRight 0.5s ease-out forwards;
 }
-
-#search-container img {
+#search-container img , #login-search-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin:0;
 }
 
 @keyframes slideRight {
@@ -178,30 +184,29 @@ form {
     }
 }
 
-#search-input {
-    width: 200px;
+#search-input, #login-search-input {
+    width: 90%;
     padding: 8px;
-    margin-right: 10px;
 }
 
-#search-button-inside{
-    padding: 8px;
+#search-button-inside, #login-search-button-inside{
+    padding:0;
     cursor: pointer;
     background-color: transparent;
     border:none;
+    margin-right: 0;
 }
 
-#toggleButton {
+#toggleButton, #LogintoggleButton {
     display: block;
 }
-
-#toggleButton,
+#LogintoggleButton,
+#login-search-container,#toggleButton,
 #search-container {
     transition: opacity 0.5s ease-out;
 }
 
-
-#toggleButton.hidden {
+#toggleButton.hidden ,  #LogintoggleButton.hidden{
     opacity: 0;
 }
 
@@ -211,26 +216,30 @@ form {
     background-color: transparent;
     border:none;
     cursor:pointer;
-    margin-left:15px
 }
 
 /* Style for the picture slideshow */
 /* Slideshow container styling */
 .slideshow-container {
-    max-width: 3000px;
+    max-width: 4000px;
     height: 500px;
-    position:static;
-    margin-left: 0;
-    padding-left:0;
+    position: static;
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    overflow-y: hidden;
+    
 }
+
 /* Next & previous buttons */
 .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
-    margin-top: -22px;
+    margin-top: 30px;
     color:  white;
     font-weight: bold;
     font-size: 18px;
@@ -238,20 +247,18 @@ form {
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.next{
+    left:97%;
 }
 .prev{
-    left:10px;
+    left:1%;
 }
 /* The dots/bullets/indicators */
 .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
+    margin: 10px 2px;
     background-color: grey;
     border-radius: 50%;
     display: inline-block;
@@ -264,6 +271,9 @@ form {
 .slideshow-container img {
     height: 100%;
     width: 100%;
+    margin: 0;
+    vertical-align: middle;
+   
 }
 
 /* Fading animation */
@@ -296,120 +306,91 @@ aside h2{
 /* buttons */
 .choose-options-button{
     color: black;
-    width:300px;
-    height:65px;
+    width:250px;
+    height:55px;
     border:solid #FFE5D9;
     border-radius:50px;
     background-color: transparent;
     font-family: 'Oxygen', sans-serif;
     cursor: pointer;
 }
+.choose-options-button a{
+    text-decoration: none;
+}
+.choose-options-button a:hover{
+    text-decoration: none;
+    color:black;
+}
 
 .choose-options-button:hover {
     background-color:#FFE5D9 ;
-}
-.add-to-cart-location{
-    margin-left:110px;
-}
-.bag2-add-to-cart-location{
-    margin-left:80px;
 }
 .choose-options-location{
     margin-right:20px;
 }
 
+
 /* bags */
-.bag-container {
-    display: inline-block;
-    vertical-align: top; 
-    margin-right: 150px;
+.big-bag-container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:0 30px 0 30px;
+}
+.bag-container{
+    flex-direction: column;
 }
 
-.bag-options {
-    white-space: nowrap; /* Prevent containers from wrapping to the next line */
-}
-
-#bag1-button{
+#bag1-button,#bag2,#bag3-button,#bag4-button{
     width:300px;
     height:auto;
     border:none;
     border-radius: 20px;
     cursor: pointer;
-    margin-left:40px;
-    margin-top:20px;
     background-color: transparent;
 }
-.bag1 {
+
+.bag1 , .bag2,.bag3, .bag4{
     width: 100%; /* Make the image take up 100% of the button's width */
     height: auto; /* Automatically adjust the height based on the aspect ratio of the image */
     border: none;
     border-radius: 20px;
 }
-.bag-1-content{
-    padding-left: 70px;
+.bag3{
+    display: flex;
+    justify-content: flex-start !important;
+}
+.bag-1-content,.bag-2-content,.bag-3-content,.bag-4-content{
     font-family: 'Oxygen', sans-serif;
     font-size: 17px;
     font-weight :100;
-
+}
+.bag-2-content,.bag-3-content{
+    padding-top: 40px;
+}
+.bag-4-content{
+    margin-top: 100px;
+}
+.bag-3-content, .bag-4-content, #bag4-choose-options, #choose-options{
+    padding-left:80px ;
+}
+#bag2-add-to-cart-location{
+    padding:0;
+    margin:0;
 }
 .stars i,p{
     font-size:15px !important;
     display:inline-block;
 }
 
-#bag2-button{
-    width:300px;
-    height:auto;
-    border:none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-left:40px;
-    margin-top:45px;
-    background-color: transparent;
-}
-.bag2 {
-    width: 100%; /* Make the image take up 100% of the button's width */
-    height: auto; /* Automatically adjust the height based on the aspect ratio of the image */
-    border: none;
-    border-radius: 20px;
-}
-.bag-2-content{
-    padding-top:25px;
-    padding-left: 90px;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 17px;
-    font-weight :100;
 
-}
-
-#bag3-button{
-    width:400px;
-    height:auto;
-    border:none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-left:40px;
-    margin-top:40px;
-    background-color: transparent;
-}
-.bag3 {
-    width: 100%; /* Make the image take up 100% of the button's width */
-    height: auto; /* Automatically adjust the height based on the aspect ratio of the image */
-    border: none;
-    border-radius: 20px;
-}
-.bag-3-content{
-    padding-left: 130px;
-    padding-top:10px;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 17px;
-    font-weight :100;
-
-}
+/* FOR VIEW MORE BUTTON*/
 .button-placement{
     text-align: center;
     padding: 20px;
 }
+
 .view-more-button{
     font-family: 'Oxygen', sans-serif;
     color:black;
@@ -530,7 +511,8 @@ footer .break-line{
     margin-left: 45px;
     margin-top:5px;
     background-color: transparent;
-    border-color:solid white;
+    border-color:white;
+    border: solid 1px;
 }
 .country-button option{
     text-align: center;
@@ -544,7 +526,7 @@ footer .break-line{
     margin-left:20px
 }
 
-/*PROFILE PAGE*/
+/*LOGIN PAGE*/
 
 #login {
     font-family: 'Oxygen', sans-serif;
@@ -552,52 +534,356 @@ footer .break-line{
     margin: 100px; 
     text-align: center;
 }
-.email input[type=email] {
-    width:600px;
-    height:50px;
-    margin-right: 450px;
-    font-size: 20px;
-    text-align: left;
-    border-radius: 90px;
-    padding:15px;
+ .email-container, .password-container {
+    display: flex;
+    justify-content: center;
 }
 
-.password input[type=password] {
+.email-container input[type=email] ,.password-container input[type=password]{
     width:600px;
     height:50px;
-    margin-right: 450px;
     font-size: 20px;
     text-align: left;
     border-radius: 90px;
     padding:15px;
+    border:solid;
 }
+
 #forgot-password , #create-account{
+    display: flex;
+    justify-content: center;
     font-family: 'Oxygen', sans-serif;
     color: black;
     text-decoration: underline;
     font-size: 50px;
-    margin-left: 475px; 
-    margin-bottom: 30px;
     text-align: center;
+}
+#create-account{
+    margin-bottom: 30px;
 }
 .submit{
     height:45px;
     width:100px;
     border-radius: 20px;
-    margin-left: 705px;
     border: none;
     background-color: #af9a88;
     color:white;
+}
+.submit-container{
+    display: flex;
+    justify-content: center;
 }
 .submit:hover{
     cursor: pointer;
 }
 #create-account{
     padding-bottom: 8px !important;
-    padding-left: 230px;
     padding-top: 6px;
 }
 #forgot-password:hover , #create-account:hover{
     cursor: pointer;
     font-weight: bold;
+}
+   
+/*PRODUCT PAGE*/
+main{
+max-height:1500px
+}
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+cursor: pointer;
+}
+/* Next & previous buttons */
+.previous,
+.forward {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: all 0.3s ease; /* Non-prefixed transition property */
+}
+/* Position the "next button" to the right */
+.forward {
+    margin-right: 70%;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.previous:hover,
+.forward:hover {
+  background-color: rgb(164, 162, 162);
+}
+
+.product-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* columns side by side */
+.column {
+    float: left;
+    margin-left: 40px;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+#small-product-pics, #item-small-product-pics{
+    background-color: transparent;
+    border: solid 1px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.active,
+.demo:hover {
+opacity: 1;
+}
+
+/* PRODUCT DETAILS */
+#title, #product-details{
+    font-family: 'Oxygen', sans-serif;
+    line-height: 40px;
+}
+.product-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 90px;
+}
+#add-to-cart-product-page{
+    display: flex;
+    padding-top: 20px;
+    justify-content: flex-start;
+}
+
+.black{
+    background-color:black;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.lime{
+    background-color: #bfff00;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    border: none;
+}
+.purple{
+    background-color:#F2BEFC;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.color-button span {
+    width: 30px; /* Set the width as needed */
+    height: 30px; /* Set the height as needed */
+    display: inline-block;
+    margin-right: 10px; /* Adjust the spacing between buttons */
+    cursor: pointer;
+}
+
+.color-button span.selected {
+    border: 2px solid #000; /* Set the border style for the selected button */
+}
+
+#quantity-box input[type ="number" ]{
+    padding:20px;
+    width:200px;
+}
+
+/* CONTACT US */
+
+.contact-us-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#contact{
+    font-family: 'Oxygen', sans-serif;
+    text-align:center;
+    margin-top: 10px;
+}
+#contact_us_sentence {
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* FORM */
+.name-email-container{
+    margin-top: 30px ;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:10px;
+}
+#name, #email{
+    border-radius: 1000px;
+    height:50px;
+    width:30vw !important;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border:solid 1px;
+}
+#phone, #comment{
+    border-radius: 100px;
+    border:solid 1px ;
+    border-radius: 10px;
+    height:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    margin-top:30px;
+    width:60vw;
+}
+#contact-us-submit{
+    margin: 20px;
+}
+
+.row , .mobile-container,.mobile-contact{
+    display:none;
+}
+
+/* RESPONSIVENESS */
+@media screen and (min-width:576px){
+    .top-nav-icons{
+        display: flex;
+        justify-content: flex-end;
+        float: right;
+    }
+    #bag-container-4 {
+        display: flex;
+        justify-content: flex-start !important;
+    }
+    
+}
+@media screen and (max-width:576px){
+    /* INDEX */
+    .sale-bar{
+        font-size: 10px;
+    }
+    .topnav{
+        display:none;
+    }
+    .mobile-container{
+        display: block;
+        background-color:#FFE5D9 ;
+    }
+    .mobile-icons{
+        display: inline-block;
+        display: flex;
+        justify-content: flex-end;
+        margin-right:20px;
+    }
+    .hamburger, .mobile-profile, .mobile-cart{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: #000;
+        margin-right:10px;
+    }
+    #mySearch{
+        font-family: Arial, Helvetica, sans-serif;
+        height:30px;
+        width:100vw;
+        max-width: 100%;
+        border:solid 1.5px;
+        border-color: black;
+    }
+    .row{
+        display:flex;
+        width:100%;
+        padding:0;
+        margin:0;
+        background-color: #FFE5D9;
+    }
+    #myMenu a{
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: none;
+        color: black;
+        font-size:18px;
+        padding: 0 10px; 
+        line-height: 30px;
+    }
+    .prev,.next{
+        display:none;
+    }
+
+    /* PRODUCT PAGE */
+    aside h2{
+        display: flex;
+    }
+    .big-bag-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .bag-container{
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap:10px;
+        width:100%;
+    }
+    #choose-options{
+        padding-right: 28%;
+    }
+    .bag-3-content,.bag-4-content{
+        padding-right: 47%;
+    }
+    /* FOOTER */
+    .why-ronans{
+        min-height:400px;
+    }
+    .social-media-icons{
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .footer-logo .logo-size{
+        height: 100px;
+        padding-left: 50%;
+    }
+    .break-line{
+        width: 100%;
+    }
+    .custom-dropdown .country-button {
+        width: 200px;
+    }
+
+    .credit-cards{
+        margin-top: 60px;
+    }
+    /* CONTACT US RESPONSIVENESS*/
+    .mobile-contact{
+        display:flex;
+    }
+    .mobile-contact #contact-us-sentence{
+        margin-left:100%;
+        padding-left:100%;
+    }
+
+    /* LOGIN PAGE RESPONSIVENESS*/
+    .email-container input[type=email], .password-container input[type=password]{
+        border: solid 1px;
+        width:96%;
+    }
+
 }

@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <!--sets the title on the browser-->
-    <title>The Ronans</title>
-
+    <title>The Ronans | Home</title>
+    <!--for responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link to external JS file-->
+    <script src="script.js" defer></script>
     <!-- Link to an external stylesheet (CSS) file -->
     <link rel="stylesheet" href="stylesheet.css">
     <!--icon on top of the browser-->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <!--link for the search icon-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,6 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    
    
 </head>
 
@@ -39,10 +43,10 @@
          <div class="topnav">
             <!-- Insert logo image -->
             <div class = "logo">
-                <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
             </div>
             <!-- Define navigation links and dropdown -->
-            <div class="topnav" >
+            <div class="topnav-contents" >
                 <a href="index.html" >Home</a>
                 <a href="collections">Collections</a>
 
@@ -56,64 +60,102 @@
                         <a href="shoulder-bags">Shoulder Bags</a> 
                     </div>
                 </div>
-                <a href="about-us">About Us</a>
+                <a href="about-us" id = "#about-us">About Us</a>
                 <a href="sale">Sale</a>
-            </div>
- 
-            <!--search bar-->
-            <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
-                <i class="fa fa-search" style = "font-size:30px"></i>
-            </button>
+            </div>   
+            <div class = "top-nav-icons">
+                <!--search bar-->
+                <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
+                    <i class="fa fa-search" style = "font-size:30px"></i>
+                </button>
 
-            <form class="search-container" id="search-container">
-                <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
-                <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
-            </form>
+                <form class="search-container" id="search-container">
+                    <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
+                    <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
+                </form>
             
-            <!--profile-->
-            <a class = "profile" href="login.html">
-                <i class="fa-regular fa-user" style="font-size:30px" ></i>
-            </a>
+                <!--profile-->
+                <a class = "profile" href="login.html">
+                    <i class="fa-regular fa-user" style="font-size:30px" ></i>
+                </a>
+
+                <!--cart-->
+                <a class="cart" href="#">
+                    <i class="fa-solid fa-cart-shopping" style="font-size:30px;"></i>
+                </a>
+            </div>
             
-        </div>
+        </div>  
     </nav>
-
+    <!--RESPONSIVENESS-->
+    <div class = "mobile-container">
+        <div class = "mobile-icons">
+            <!-- LOGO -->
+            <div class = "logo">
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+            </div>
+            <!--profile-->
+            <a class = "mobile-profile" href="login.html">
+                <i class="fa-regular fa-user" ></i>
+            </a>
+            <!--cart-->
+            <a class="mobile-cart" href="#">
+                <i class="fa-solid fa-cart-shopping" ></i>
+            </a>
+            <a  class="hamburger" onclick="toggleMobileNavigation()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div class="row">
+            <div class="left" >
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+                <ul id="myMenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Shop All</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Back In Stock</a></li>
+                    <li><a href="#">Shoulder Bags</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <!-- main content sections -->
-    <main>
-        <!-- Create a picture slideshow with controls -->
-        <div class="slideshow-container">
-            <!-- Define individual slides with images and captions -->
-            <div class="mySlides fade">
-                <img src="slideshow/bag_picture_1.jpg" alt="Seasonal Bags" title="Seasonal Bags">
-            </div>
-            <div class="mySlides fade">
-                <img src = "slideshow/bag_picture_2.jpg" alt = "Fall Bags" title="Fall Bags">
-            </div>
-            <div class="mySlides fade">
-                <img src = "slideshow/bag_picture_3.jpg" alt = "Red Bags" title="Red Bags">
-            </div>
+    
+    <!-- Create a picture slideshow with controls -->
+    <div class="slideshow-container">
+        <!-- Define individual slides with images and captions -->
+        <div class="mySlides fade">
+            <img src="images/slideshow/bag_picture_1.jpg" alt="Seasonal Bags" title="Seasonal Bags">
         </div>
-        
-        <!--previous and next buttons-->
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a> 
-
-        <!-- Add slide indicator dots and associated script -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="mySlides fade">
+            <img src = "images/slideshow/bag_picture_2.jpg" alt = "Fall Bags" title="Fall Bags">
         </div>
-        <script src = "script.js"></script>
-        
-    </main>
+        <div class="mySlides fade">
+            <img src = "images/slideshow/bag_picture_3.jpg" alt = "Red Bags" title="Red Bags">
+        </div>
+    </div>
+    
+    <!--previous and next buttons-->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a> 
 
+    <!-- Add slide indicator dots and associated script -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
     <aside>
-        <h2>Best Sellers</h2>
-        <div class="bag-options">
+        <h2>Best Sellers</h2>   
+        <div class = "big-bag-container">
+            <!--BAG 1-->
             <div class="bag-container">
                 <button type="button" id="bag1-button">
-                    <img src="products/bag_1.png" class="bag1" alt="black shoulder bag" style="width:300px; height:auto;">
+                    <img src="images/products/bag_1.png" class="bag1"  alt = "Black Shoulder Bag">
                 </button>
                 <div class="bag-1-content">
                     <p>Black Shoulder Bag </p><br>
@@ -126,16 +168,16 @@
                         <i class="fa-solid fa-star" style="color: #fff000;"></i>
                         <p>(5)</p>
                     </div>
-                    <div class="choose-options-location">
-                        <button  class="choose-options-button">Chooose Options</button>
-                    </div>
+                </div>
+                <div class="special-add-to-cart-location">
+                    <button class="choose-options-button">Add To Cart</button>
                 </div>
             </div>
-    
+            <!--BAG 2 -->
             <div class="bag-container">
-                <button type="button" id="bag2-button">
-                    <img src="products/bag_2.png" class="bag2" alt="black snake skin baguette bag" style="width:300px; height:auto;">
-                </button>
+                <a href="product.html" id="bag2-button">
+                    <img src="images/products/bag_2.png" class="bag2" id="bag2" alt="Black Snake Skin Baguette Bag">
+                </a>
                 <div class="bag-2-content">
                     <p>Black Snake Skin Baguette Bag </p><br>
                     <p>From: SGD 40</p>
@@ -148,13 +190,15 @@
                     </div>
                 </div>
                 <div class="bag2-add-to-cart-location">
-                    <button  class="choose-options-button">Add To Cart</button>
+                    <form id = "bag2-add-to-cart-location" action = "product.html">
+                        <button class="choose-options-button">Add To Cart</button>
+                    </form>
                 </div>
             </div>
-
+            <!--BAG 3-->
             <div class="bag-container">
                 <button type="button" id="bag3-button">
-                    <img src="products/bag_3.png" class="bag3" alt="Black Ruffle Bag" style="width:400px; height:auto;">
+                    <img src="images/products/bag_3.png" class="bag3" alt="Black Ruffle Bag"  style = "width:400px;height:auto;">
                 </button>
                 <div class="bag-3-content">
                     <p>Black Ruffle Bag </p><br>
@@ -168,8 +212,29 @@
                         <p>(9)</p>
                     </div>
                 </div>
-                <div class="add-to-cart-location">
-                    <button  class="choose-options-button">Add To Cart</button>
+                <div class="add-to-cart-location" id ="choose-options">
+                    <button class="choose-options-button">Add To Cart</button>
+                </div>
+            </div>
+            <!--BAG 4 -->
+            <div class="bag-container" id = "bag-container-4">
+                <button type="button" id="bag4-button">
+                    <img src="images/products/bag_4.png" id = "bag4"  alt = "Black Snake Skin Baguette Bag" style = "width:400px;height:auto;">
+                </button>
+                <div class="bag-4-content">
+                    <p>Black Box Bag </p><br>
+                    <p>From: SGD 35</p>
+                    <div class="stars">
+                        <i class="fa-solid fa-star" style="color: #fff000;"></i>
+                        <i class="fa-solid fa-star" style="color: #fff000;"></i>
+                        <i class="fa-solid fa-star" style="color: #fff000;"></i>
+                        <i class="fa-solid fa-star" style="color: #fff000;"></i>
+                        <i class="fa-solid fa-star" style="color: #fff000;"></i>
+                        <p>(100)</p>
+                    </div>
+                </div>
+                <div class="special-add-to-cart-location" id ="bag4-choose-options">
+                    <button class="choose-options-button" >Add To Cart</button>
                 </div>
             </div>
         </div>
@@ -203,12 +268,12 @@
 
             <ul class="about-list">
                 <li class = "ABOUT"><a href="#">About</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
             </ul>
 
             <div class = "footer-logo">
-                <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
-                <div style="clear: both;"></div>
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+
             </div>
             <div class="social-media-icons">
                 <div class="instagram">
@@ -232,15 +297,15 @@
             <div class="custom-dropdown">
                 <select class = "country-button">
                     <option value="Singapore">Singapore | SGD </option>
-                    <option value="Singapore">Malaysia | MYR </option>
-                    <option value="Singapore">USA | USD </option>
-                    <option value="Singapore">China | YUAN </option>
+                    <option value="Malaysia">Malaysia | MYR </option>
+                    <option value="USA">USA | USD </option>
+                    <option value="China">China | YUAN </option>
                 </select>
             </div>
             <div class="credit-cards">
-                <i class="fa-brands fa-cc-visa" id="credit-intervals" style="color: #fafafa; font-size:30px;"></i>
-                <i class="fa-brands fa-cc-mastercard"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
-                <i class="fa-brands fa-cc-amex"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-visa"  style="color: #fafafa; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-mastercard"  style="color: #ffffff; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-amex"   style="color: #ffffff; font-size:30px;"></i>
             </div>
             <br><p style="margin-top:50px;">&copy; 2023 The Ronans. All rights reserved.</p>
         </div>

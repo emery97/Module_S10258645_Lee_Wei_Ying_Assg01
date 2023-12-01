@@ -3,12 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <!--sets the title on the browser-->
-        <title>The Ronans</title>
-    
+        <title>The Ronans | Products </title>
+        <!--for responsiveness-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <!-- Link to an external stylesheet (CSS) file -->
         <link rel="stylesheet" href="stylesheet.css">
         <!--icon on top of the browser-->
-        <link rel="icon" type="image/png" href="logo.png">
+        <link rel="icon" type="image/png" href="images/logo.png">
         <!--link for the search icon-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,10 +24,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
-        <!--Linking to Js file-->
-        <script src="script.js" defer></script>
+
         
-       
     </head>
     <body>
         <header>
@@ -40,7 +40,7 @@
             <div class="topnav">
                <!-- Insert logo image -->
                <div class = "logo">
-                   <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+                   <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
                </div>
                <!-- Define navigation links and dropdown -->
                <div class="topnav-contents" >
@@ -57,106 +57,115 @@
                            <a href="shoulder-bags">Shoulder Bags</a> 
                        </div>
                    </div>
-                   <a href="about-us">About Us</a>
+                   <a href="about-us" id = "#about-us">About Us</a>
                    <a href="sale">Sale</a>
                </div>   
-              <!--search bar-->
-               <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
-                   <i class="fa fa-search" style = "font-size:30px"></i>
-               </button>
+               <div class = "top-nav-icons">
+                   <!--search bar-->
+                   <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
+                       <i class="fa fa-search" style = "font-size:30px"></i>
+                   </button>
    
-               <form class="search-container" id="search-container">
-                   <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
-                   <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
-               </form>
+                   <form class="search-container" id="search-container">
+                       <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
+                       <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
+                   </form>
                
-               <!--profile-->
-               <a class = "profile" href="login.html">
-                   <i class="fa-regular fa-user" style="font-size:30px" ></i>
-               </a>
+                   <!--profile-->
+                   <a class = "profile" href="login.html">
+                       <i class="fa-regular fa-user" style="font-size:30px" ></i>
+                   </a>
    
-               <!--cart-->
-               <a class="cart" href="product.html">
-                   <i class="fa-solid fa-cart-shopping" style="font-size:30px;"></i>
-               </a>
-               
-           </div>
-   
-           <!--FOR RESPONSIVENESS -->
-           <div class ="mobile-container" id = "mobileContainer">
-   
-               <a class = "hamburger-icon" href="javascript:void(0);" onclick="toggleMobileNavigation()">
-                   <i class="fa fa-bars"></i>
-               </a>
-       
-               <!-- Define navigation links and dropdown -->
-               <div class="topnav-contents" id = "myLinks">
-                   <a href="index.html" >Home</a>
-                   <a href="collections">Collections</a>
-   
-                   <!-- Dropdown menu -->
-                   <div class="dropdown" id="dropdown" >
-                       <button class="mobile-dropbtn" onclick="ShopNavigation()">Shop</button>
-                       <div class="dropdown-content" id ="dropdown-contents">
-                           <a href="shop-all">Shop All</a>
-                           <a href="best-sellers">Best Sellers</a>
-                           <a href="back-in-stock">Back in Stock</a>
-                           <a href="shoulder-bags">Shoulder Bags</a> 
-                       </div>
-                   </div>
-                   
-                   <a href="about-us">About Us</a>
-                   <a href="sale">Sale</a>
-                    <!--search bar-->
+                   <!--cart-->
+                   <a class="cart" href="#">
+                       <i class="fa-solid fa-cart-shopping" style="font-size:30px;"></i>
+                   </a>
                </div>
-           </div>
+               
+           </div>  
        </nav>
+         <!--RESPONSIVENESS-->
+    <div class = "mobile-container">
+        <div class = "mobile-icons">
+            <!-- LOGO -->
+            <div class = "logo">
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+            </div>
+          <!--profile-->
+          <a class = "mobile-profile" href="login.html">
+            <i class="fa-regular fa-user" ></i>
+          </a>
+          <!--cart-->
+          <a class="mobile-cart" href="#">
+            <i class="fa-solid fa-cart-shopping" ></i>
+          </a>
+          <a  class="hamburger" onclick="toggleMobileNavigation()">
+              <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="left" >
+          <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+          <ul id="myMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Shop All</a></li>
+            <li><a href="#">Best Sellers</a></li>
+            <li><a href="#">Back In Stock</a></li>
+            <li><a href="#">Shoulder Bags</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+      </div>
         <!--main content-->
         <main>
-            <div class="container">
+            <div class="product-container">
                 <div class="mySlides">
-                  <img src="products/bag_2_items.png" style="width:500px;height:500px;">
+                    <img src="images/products/bag_2.png" style="width:400px;height:500px;" alt = "Black Snake Skin Baguette Bag">
                 </div>
-              
                 <div class="mySlides">
-                  <img src="products/bag_2.png" style="width:400px;height:500px;">
+                  <img src="images/products/bag_2_items.png" style="width:500px;height:500px;" alt = "items">
                 </div>
-                <div class = "product-text">
-                    <h2 id="title" style = "font-size: 30px;">The Ronans Shoulder Bag</h2>
-                    <p id="product-details">
-                        SGD 55.00<br>
-                        Introducing The Ronans Leather Shoulder Bag 🌟 <br>
-                        Designed as your all-in-one mobile office, it features a dedicated slot for your iPad or documents, <br>
-                        plus two inner mesh pockets for wires and stationary. With a plush velvet lining, your laptop will experience unmatched comfort. <br>
-                        Stylish, functional, and cozy – it's more than just a bag, it's a luxury workspace on the go! 💼✨<br><br>
+            </div>
+            <div class = "product-text">
+                <h2 id="title" style = "font-size: 30px;">Black Snake Skin Baguette Bag</h2>
+                <p id="product-details">
+                    SGD 55.00<br>
+                    Introducing Black Snake Skin Baguette Bag🌟 <br>
+                    Designed as your all-in-one mobile office, it features a dedicated slot for your iPad or documents, <br>
+                    plus two inner mesh pockets for wires and stationary. With a plush velvet lining, your laptop will experience unmatched comfort. <br>
+                    Stylish, functional, and cozy – it's more than just a bag, it's a luxury workspace on the go! 💼✨<br><br>
 
-                        Check out all the colours <strong>here</strong>
-                    </p>
-                    <div class="color-button">
-                        <span class="lime" onclick="boldButton(this)"></span>
-                        <span class="purple" onclick="boldButton(this)"></span>
-                        <span class="black" onclick="boldButton(this)"></span>
-                    </div>
-                    <div id = "quantity-box" class = "quantity-box">
-                        <input value=""  min="1"  type="number" step="1" name="quantity" id="quantity">
-                    </div>
-                    <div class="bag2-add-to-cart-location">
-                        <button class="choose-options-button"><a href = "product.html">Add To Cart</a></button>
-                    </div>
+
+                    Check out all the colours <strong>here</strong>
+                </p>
+                <div class="color-button">
+                    <span class="lime" onclick="boldButton(this)"></span>
+                    <span class="purple" onclick="boldButton(this)"></span>
+                    <span class="black" onclick="boldButton(this)"></span>
                 </div>
-                <br>
+                <div id = "quantity-box" class = "quantity-box">
+                    <input value=""  min="1"  type="number" step="1" name="quantity" id="quantity">
+                </div>
+                <div class="bag2-add-to-cart-location" id = "add-to-cart-product-page">
+                    <button class="choose-options-button" id ="product-page-button" >Add To Cart</button>
+                </div>
+            </div>
+
+
+            <div class="product-row">
+                <a class="previous" onclick="plusSlides(-1)">❮</a>
+                <a class="forward" onclick="plusSlides(1)">❯</a>
+                <div class="column">
+                    <img class="demo" id = "small-product-pics" src="images/products/bag_2_items.png" alt = "Black Snake Skin Baguette Bag" style="width:100px;height:100px;"  onclick="currentSlide(1)">
+                </div>
+                <div class="column">
+                    <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt = "items"style="width:100px;height:100px;"  onclick="currentSlide(2)">
+                </div>
             </div>
         </main>
-        <div class="row">
-            <a class="previous" onclick="plusSlides(-1)">❮</a>
-            <a class="forward" onclick="plusSlides(1)">❯</a>
-            <div class="column">
-                <img class="demo cursor" src="products/bag_2_items.png" style="width:100px;height:100px;"  onclick="currentSlide(1)">
-            </div>
-            <div class="column">
-                <img class="demo cursor" src="products/bag_2.png" style="width:100px;height:100px;"  onclick="currentSlide(2)">
-            </div>
-        </div>
 
         <footer>
             <!--first half of footer - WHY THE RONANS? -->
@@ -185,7 +194,7 @@
                 </ul>
     
                 <div class = "footer-logo">
-                    <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+                    <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="social-media-icons">
@@ -210,47 +219,46 @@
                 <div class="custom-dropdown">
                     <select class = "country-button">
                         <option value="Singapore">Singapore | SGD </option>
-                        <option value="Singapore">Malaysia | MYR </option>
-                        <option value="Singapore">USA | USD </option>
-                        <option value="Singapore">China | YUAN </option>
+                        <option value="Malaysia">Malaysia | MYR </option>
+                        <option value="USA">USA | USD </option>
+                        <option value="China">China | YUAN </option>
                     </select>
                 </div>
                 <div class="credit-cards">
-                    <i class="fa-brands fa-cc-visa" id="credit-intervals" style="color: #fafafa; font-size:30px;"></i>
-                    <i class="fa-brands fa-cc-mastercard"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
-                    <i class="fa-brands fa-cc-amex"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
+                    <i class="fa-brands fa-cc-visa"  style="color: #fafafa; font-size:30px;"></i>
+                    <i class="fa-brands fa-cc-mastercard"  style="color: #ffffff; font-size:30px;"></i>
+                    <i class="fa-brands fa-cc-amex"  style="color: #ffffff; font-size:30px;"></i>
                 </div>
                 <br><p style="margin-top:50px;">&copy; 2023 The Ronans. All rights reserved.</p>
             </div>
         </footer>
         <script>
-            let slideIndex = 1;
+            let slideIndex = 1;         // show first slide
             showSlides(slideIndex);
-            
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
+
+            function plusSlides(n) {    // update slide
+            showSlides(slideIndex += n);
             }
-            
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
+
+            function currentSlide(n) {  // shows specific slide
+            showSlides(slideIndex = n);
             }
-            
+
             function showSlides(n) {
-              let i;
-              let slides = document.getElementsByClassName("mySlides");
-              let dots = document.getElementsByClassName("demo");
-              let captionText = document.getElementById("caption");
-              if (n > slides.length) {slideIndex = 1}
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}        // wrap around logic
+            if (n < 1) {slideIndex = slides.length}        // wrap around logic
+            for (i = 0; i < slides.length; i++) {          // hide all the slide
                 slides[i].style.display = "none";
-              }
-              for (i = 0; i < dots.length; i++) {
+            }
+            for (i = 0; i < dots.length; i++) {            // remove active class 
                 dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";
-              dots[slideIndex-1].className += " active";
-              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
             }
         </script>
     </body>
