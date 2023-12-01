@@ -6,13 +6,15 @@
     <!--sets the title on the browser-->
     <title>The Ronans</title>
 
-    
+
+    <!--for responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--link to external JS file-->
     <script src="script.js" defer></script>
     <!-- Link to an external stylesheet (CSS) file -->
     <link rel="stylesheet" href="stylesheet.css">
     <!--icon on top of the browser-->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <!--link for the search icon-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,104 +41,108 @@
         </div>
     </header>
     <nav>
-         <!-- Create a top navigation bar with links and dropdown menu -->
-         <div class="topnav">
-            <!-- Insert logo image -->
+        <!-- Create a top navigation bar with links and dropdown menu -->
+        <div class="topnav">
+           <!-- Insert logo image -->
+           <div class = "logo">
+               <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+           </div>
+           <!-- Define navigation links and dropdown -->
+           <div class="topnav-contents" >
+               <a href="index.html" >Home</a>
+               <a href="collections">Collections</a>
+
+               <!-- Dropdown menu -->
+               <div class="dropdown" >
+                   <button class="dropbtn">Shop</button>
+                   <div class="dropdown-content">
+                       <a href="shop-all">Shop All</a>
+                       <a href="best-sellers">Best Sellers</a>
+                       <a href="back-in-stock">Back in Stock</a>
+                       <a href="shoulder-bags">Shoulder Bags</a> 
+                   </div>
+               </div>
+               <a href="about-us" id = "#about-us">About Us</a>
+               <a href="sale">Sale</a>
+           </div>   
+           <div class = "top-nav-icons">
+               <!--search bar-->
+               <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
+                   <i class="fa fa-search" style = "font-size:30px"></i>
+               </button>
+
+               <form class="search-container" id="search-container">
+                   <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
+                   <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
+               </form>
+           
+               <!--profile-->
+               <a class = "profile" href="login.html">
+                   <i class="fa-regular fa-user" style="font-size:30px" ></i>
+               </a>
+
+               <!--cart-->
+               <a class="cart" href="#">
+                   <i class="fa-solid fa-cart-shopping" style="font-size:30px;"></i>
+               </a>
+           </div>
+           
+       </div>  
+   </nav>
+   <!--RESPONSIVENESS-->
+   <div class = "mobile-container">
+       <div class = "mobile-icons">
+            <!-- LOGO -->
             <div class = "logo">
-                <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
             </div>
-            <!-- Define navigation links and dropdown -->
-            <div class="topnav-contents" >
-                <a href="index.html" >Home</a>
-                <a href="collections">Collections</a>
-
-                <!-- Dropdown menu -->
-                <div class="dropdown" >
-                    <button class="dropbtn">Shop</button>
-                    <div class="dropdown-content">
-                        <a href="shop-all">Shop All</a>
-                        <a href="best-sellers">Best Sellers</a>
-                        <a href="back-in-stock">Back in Stock</a>
-                        <a href="shoulder-bags">Shoulder Bags</a> 
-                    </div>
-                </div>
-                <a href="about-us">About Us</a>
-                <a href="sale">Sale</a>
-            </div>   
-           <!--search bar-->
-            <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
-                <i class="fa fa-search" style = "font-size:30px"></i>
-            </button>
-
-            <form class="search-container" id="search-container">
-                <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
-                <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
-            </form>
-            
-            <!--profile-->
-            <a class = "profile" href="login.html">
-                <i class="fa-regular fa-user" style="font-size:30px" ></i>
-            </a>
-
-            <!--cart-->
-            <a class="cart" href="product.html">
-                <i class="fa-solid fa-cart-shopping" style="font-size:30px;"></i>
-            </a>
-            
-        </div>
-
-        <!--FOR RESPONSIVENESS -->
-        <div class ="mobile-container" id = "mobileContainer">
-            <a class = "hamburger-icon" href="javascript:void(0);" onclick="toggleMobileNavigation()">
-                <i class="fa fa-bars"></i>
-            </a>
-            
-            <!-- Define navigation links and dropdown -->
-            <div class="topnav-contents" id = "myLinks">
-                <a href="index.html" >Home</a>
-                <a href="collections">Collections</a>
-
-                <!-- Dropdown menu -->
-                <div class="dropdown" id="dropdown" >
-                    <button class="mobile-dropbtn" onclick="toggleDropBtn()">Shop</button>
-                    <div class="dropdown-content" id ="dropdown-content">
-                        <a href="shop-all">Shop All</a>
-                        <a href="best-sellers">Best Sellers</a>
-                        <a href="back-in-stock">Back in Stock</a>
-                        <a href="shoulder-bags">Shoulder Bags</a> 
-                    </div>
-                </div>
-                
-                <a href="about-us">About Us</a>
-                <a href="sale">Sale</a>
+           <!--profile-->
+           <a class = "mobile-profile" href="login.html">
+               <i class="fa-regular fa-user" ></i>
+           </a>
+           <!--cart-->
+           <a class="mobile-cart" href="#">
+               <i class="fa-solid fa-cart-shopping" ></i>
+           </a>
+           <a  class="hamburger" onclick="toggleMobileNavigation()">
+               <i class="fa fa-bars"></i>
+           </a>
+       </div>
+       <div class="row">
+           <div class="left" >
+               <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+               <ul id="myMenu">
+                   <li><a href="#">Home</a></li>
+                   <li><a href="#">Collections</a></li>
+                   <li><a href="#">Shop All</a></li>
+                   <li><a href="#">Best Sellers</a></li>
+                   <li><a href="#">Back In Stock</a></li>
+                   <li><a href="#">Shoulder Bags</a></li>
+                   <li><a href="#">About Us</a></li>
+                   <li><a href="#">Sale</a></li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   <main>
+    <h1 id="contact">Contact</h1>
+    <p id="contact_us_sentence">Got a question? Drop 'em below and we'll get back to you within 1-3 working days!</p>
+    <div class="contact-us-page">
+        <form class="contact-form">
+            <div class = "name-email-container">
+                <input id="name" type="text" placeholder=" Name" name="name" autocomplete="off" required>
+                <input id="email" type="email" placeholder=" Email" name="email" autocomplete="off" required>
             </div>
-        </div>
-    </nav>
-    <main>
-        <h1 id="contact">Contact</h1>
-        <p id="contact_us_sentence">Got a question? Drop 'em below and we'll get back to you within 1-3 working days!</p>
-        <form id="contact_form">
-            <div class="form-group" id="name">
-                <input type="text" placeholder="Name" name="name" autocomplete="off" required>
-            </div>
-            <div class="form-group" id="contact_us_email">
-                <input type="email" placeholder="Email" name="email" autocomplete="off" required>
+            <input id = "phone" type="text" placeholder=" Phone Number" name="phone" autocomplete="off" required>
+            <input id = "comment" type="text" placeholder=" Comment" name="comment" autocomplete="off" required>
+            <div class = "submit-container" id = "contact-us-submit">
+                <button class = "submit" type="submit">Submit</button>
             </div>
         </form>
-        <form>
-            <div id ="phone">
-                <input type="text" placeholder="Phone Number" name="phone" autocomplete="off" required>
-            </div>
-        </form>
-        <form>
-            <div id ="comment">
-                <input type="text" placeholder="Comment" name="comment" autocomplete="off" required>
-            </div>
-        </form>
+    </div>
     </main>
+
     
-
-
     <footer>
         <!--first half of footer - WHY THE RONANS? -->
         <div class="why-ronans">
@@ -164,7 +170,7 @@
             </ul>
 
             <div class = "footer-logo">
-                <a href="index.html"> <img class = "logo-size" src="logo.png" alt="The Ronans" > </a>
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
                 <div style="clear: both;"></div>
             </div>
             <div class="social-media-icons">
@@ -189,15 +195,15 @@
             <div class="custom-dropdown">
                 <select class = "country-button">
                     <option value="Singapore">Singapore | SGD </option>
-                    <option value="Singapore">Malaysia | MYR </option>
-                    <option value="Singapore">USA | USD </option>
-                    <option value="Singapore">China | YUAN </option>
+                    <option value="Malaysia">Malaysia | MYR </option>
+                    <option value="USA">USA | USD </option>
+                    <option value="China">China | YUAN </option>
                 </select>
             </div>
             <div class="credit-cards">
-                <i class="fa-brands fa-cc-visa" id="credit-intervals" style="color: #fafafa; font-size:30px;"></i>
-                <i class="fa-brands fa-cc-mastercard"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
-                <i class="fa-brands fa-cc-amex"  id="credit-intervals" style="color: #ffffff; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-visa"  style="color: #fafafa; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-mastercard"  style="color: #ffffff; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-amex"   style="color: #ffffff; font-size:30px;"></i>
             </div>
             <br><p style="margin-top:50px;">&copy; 2023 The Ronans. All rights reserved.</p>
         </div>
