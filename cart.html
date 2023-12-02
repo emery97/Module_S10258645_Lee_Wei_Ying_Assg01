@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <!--sets the title on the browser-->
+    <title>The Ronans | Home</title>
+    <!--for responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--link to external JS file-->
+    <script src="script.js" defer></script>
+    <!-- Link to an external stylesheet (CSS) file -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <!--icon on top of the browser-->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <!--link for the search icon-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--profile icon link-->
+    <script src="https://kit.fontawesome.com/85b6a0f764.js" crossorigin="anonymous"></script>
+    <!--best selling font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+    <!--content font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    
+   
+</head>
+<nav>
+    <!-- Create a top navigation bar with links and dropdown menu -->
+    <div class="topnav">
+       <!-- Insert logo image -->
+       <div class = "logo">
+           <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+       </div>
+       <!-- Define navigation links and dropdown -->
+       <div class="topnav-contents" >
+           <a href="index.html" >Home</a>
+           <a href="collections">Collections</a>
+
+           <!-- Dropdown menu -->
+           <div class="dropdown" >
+               <button class="dropbtn">Shop</button>
+               <div class="dropdown-content">
+                   <a href="shop-all">Shop All</a>
+                   <a href="best-sellers">Best Sellers</a>
+                   <a href="back-in-stock">Back in Stock</a>
+                   <a href="shoulder-bags">Shoulder Bags</a> 
+               </div>
+           </div>
+           <a href="about-us" id = "#about-us">About Us</a>
+           <a href="sale">Sale</a>
+       </div>   
+       <div class = "top-nav-icons">
+           <!--search bar-->
+           <button type="button" class="search-button" id="toggleButton" onclick="toggleSearchBar()" >
+               <i class="fa fa-search" style = "font-size:30px"></i>
+           </button>
+
+           <form class="search-container" id="search-container">
+               <input type="text" name="search" id="search-input" placeholder="search" autocomplete="off" >
+               <button id= search-button-inside class ="fa fa-search" onclick="search()"></button>
+           </form>
+       
+           <!--profile-->
+           <a class = "profile" href="login.html">
+               <i class="fa-regular fa-user" style="font-size:30px" ></i>
+           </a>
+
+           <!--cart-->
+           <header>
+            <div class="shopping">
+                <i class="fa-solid fa-cart-shopping" style="font-size:30px; "  ></i>
+                <span class="quantity">0</span>
+            </div>
+        </header>
+       </div>
+       
+   </div>  
+</nav>
+
+
+<!--RESPONSIVENESS-->
+<div class = "mobile-container">
+    <div class = "mobile-icons">
+        <!-- LOGO -->
+        <div class = "logo">
+            <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+        </div>
+        <!--profile-->
+        <a class = "mobile-profile" href="login.html">
+            <i class="fa-regular fa-user" ></i>
+        </a>
+        <!--cart-->
+        <a class="mobile-cart" href="#">
+            <i class="fa-solid fa-cart-shopping" ></i>
+        </a>
+        <a  class="hamburger" onclick="toggleMobileNavigation()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div class="row">
+        <div class="left" >
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            <ul id="myMenu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Shop All</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">Back In Stock</a></li>
+                <li><a href="#">Shoulder Bags</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+<!-- main content sections -->
+<main>
+
+    <div class="container">
+  
+
+        <div class="list">
+            
+        </div>
+    </div>
+    <div class="card">
+        <ul class="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</main>
+
+
+
+    
+    <footer>
+        <!--first half of footer - WHY THE RONANS? -->
+        <div class="why-ronans">
+            <h2>WHY THE RONANS?</h2><br>
+            <h1>Style + Utility</h1><br>
+            <p>
+                At The Ronans, we blend chic aesthetics with practical functionality in our bags. ✨<br>
+                 No more compromising between style and purpose.💗<br>
+                 Ronan Bags offer the elegance you crave without sacrificing the everyday usability you deserve.✌️ </p>
+        </div>
+
+        <div class="bottom-page">
+            <ul class="shop-list">
+                <li class = "SHOP"><a href="index.html">Shop</a></li>
+                <li><a href="#">Shop All</a></li>
+                <li><a href="#">Best Sellers</a></li>
+                <li><a href="#">Back In Stock</a></li>
+                <li><a href="#">Shoulder Bags</a></li>
+            </ul>
+            
+
+            <ul class="about-list">
+                <li class = "ABOUT"><a href="#">About</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+
+            <div class = "footer-logo">
+                <a href="index.html"> <img class = "logo-size" src="images/logo.png" alt="The Ronans" > </a>
+
+            </div>
+            <div class="social-media-icons">
+                <div class="instagram">
+                    <a href="https://www.instagram.com/">
+                        <i class="fa-brands fa-instagram" style="color: #ffffff; font-size:20px;"></i>
+                    </a>
+                </div>
+                <div class="pinterest">
+                    <a href="https://www.pinterest.com/">
+                        <i class="fa-brands fa-pinterest" style="color: #ffffff; font-size:20px;"></i>             
+                    </a>
+                </div>
+                <div class="tiktok">
+                    <a href="https://www.tiktok.com/">
+                        <i class="fa-brands fa-tiktok" style="color: #ffffff; font-size:20px;"></i>             
+                    </a>
+                </div>
+            </div>
+            <br><hr class = "break-line">
+            <p class = "country-region">Country / Region</p>
+            <div class="custom-dropdown">
+                <select class = "country-button">
+                    <option value="Singapore">Singapore | SGD </option>
+                    <option value="Malaysia">Malaysia | MYR </option>
+                    <option value="USA">USA | USD </option>
+                    <option value="China">China | YUAN </option>
+                </select>
+            </div>
+            <div class="credit-cards">
+                <i class="fa-brands fa-cc-visa"  style="color: #fafafa; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-mastercard"  style="color: #ffffff; font-size:30px;"></i>
+                <i class="fa-brands fa-cc-amex"   style="color: #ffffff; font-size:30px;"></i>
+            </div>
+            <br><p style="margin-top:50px;">&copy; 2023 The Ronans. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

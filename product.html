@@ -78,7 +78,7 @@
                    </a>
    
                    <!--cart-->
-                   <a class="cart" href="#">
+                   <a class="cart" href="cart.html">
                        <i class="fa-solid fa-cart-shopping" style="font-size:30px;"></i>
                    </a>
                </div>
@@ -97,7 +97,7 @@
                     <i class="fa-regular fa-user" ></i>
                 </a>
                 <!--cart-->
-                <a class="mobile-cart" href="#">
+                <a class="mobile-cart" href="cart.html">
                     <i class="fa-solid fa-cart-shopping" ></i>
                 </a>
                 <a  class="hamburger" onclick=" toggleMobileNavigation()">
@@ -125,21 +125,21 @@
 
             <div class="product-container">
                 <div class="mySlides">
-                    <img src="images/products/bag_2.png" id = "product-bag2"  alt = "Black Snake Skin Baguette Bag">
+                    <img src="images/products/bag_2.png" id = "product-bag2" style="width:500px;height:500px;"  alt = "Black Snake Skin Baguette Bag">
                 </div>
                 <div class="mySlides">
                   <img src="images/products/bag_2_items.png" style="width:500px;height:500px;" alt = "items">
                 </div>
                 
                 <div class="mobile-product-row">
-                    <a class="mobile-previous" onclick="plusCustomSlides(-1)">❮</a>
+                    <a class="mobile-previous" onclick="changeSlide(-1)">❮</a>
                     <div class="column">
-                        <img class="demo" id="small-product-pics" src="images/products/bag_2_items.png" alt="Black Snake Skin Baguette Bag" onclick="currentCustomSlide(1)">
+                        <img class="demo" id="small-product-pics" src="images/products/bag_2_items.png" alt="Black Snake Skin Baguette Bag" onclick="showSlide(1)">
                     </div>
                     <div class="column">
-                        <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt="items" onclick="currentCustomSlide(2)">
+                        <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt="items" onclick="showSlide(2)">
                     </div>
-                    <a class="mobile-forward" onclick="plusCustomSlides(1)">❯</a>
+                    <a class="mobile-forward" onclick="changeSlide(1)">❯</a>
                 </div>
                 
                 <div class = "product-text">
@@ -171,13 +171,13 @@
 
 
             <div class="product-row">
-                <a class="previous" onclick="plusCustomSlides(-1)">❮</a>
-                <a class="forward" onclick="plusCustomSlides(1)">❯</a>
+                <a class="previous" onclick="changeSlide(-1)">❮</a>
+                <a class="forward" onclick="changeSlide(1)">❯</a>
                 <div class="column">
-                    <img class="demo" id="small-product-pics" src="images/products/bag_2_items.png" alt="Black Snake Skin Baguette Bag" style="width:100px;height:100px;" onclick="currentCustomSlide(1)">
+                    <img class="demo" id="small-product-pics" src="images/products/bag_2_items.png" alt="Black Snake Skin Baguette Bag" style="width:100px;height:100px;" onclick="showSlide(1)">
                 </div>
                 <div class="column">
-                    <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt="items" style="width:100px;height:100px;" onclick="currentCustomSlide(2)">
+                    <img class="demo" id="item-small-product-pics" src="images/products/bag_2.png" alt="items" style="width:100px;height:100px;" onclick="showSlide(2)">
                 </div>
             </div>
             

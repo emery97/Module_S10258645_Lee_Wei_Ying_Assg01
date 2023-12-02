@@ -1,6 +1,8 @@
 /* INDEX SLIDESHOW  */
 var slideIndex = 1;     // keep track of slides
 var timer = null;       // control speed of the slides
+let currentSlideIndex = 1;
+
 showSlides(slideIndex); // show first slide
 
 function plusSlides(n) {
@@ -113,57 +115,138 @@ function boldButton(element) {
   // Add border to the clicked button
   element.style.border = '2px solid black';
 }
-
-/* B CODE */
-document.addEventListener('DOMContentLoaded', function() {
-  initPage();
-  document.addEventListener("click", function (event) {
-    if (searchContainer && toggleButton) {
-      var isClickInsideSearchContainer = searchContainer.contains(event.target);
-      var isClickInsideToggleButton = toggleButton.contains(event.target);
-  
-      if (!isClickInsideSearchContainer && !isClickInsideToggleButton) {
-        searchContainer.style.display = "none";
-        toggleButton.classList.remove("hidden");
-      }
-    }
-  });
-  
-});
-
 /* PRODUCT SLIDESHOW*/
-let customSlideIndex = 1;
-showCustomSlides(customSlideIndex);
 
-function plusCustomSlides(n) {
-    showCustomSlides(customSlideIndex += n);
+showSlide(currentSlideIndex);
+
+function changeSlide(n) {
+  console.log(currentSlideIndex)
+  showSlide(currentSlideIndex += n);
 }
 
-function currentCustomSlide(n) {
-    showCustomSlides(customSlideIndex = n);
+function currentSlide(n) {
+  showSlide(currentSlideIndex = n);
 }
 
-function showCustomSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    
-    if (n > slides.length) {
-        customSlideIndex = 1;
-    }
+function showSlide(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
 
-    if (n < 1) {
-        customSlideIndex = slides.length;
-    }
+  let dots = document.getElementsByClassName("row");
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+  if (n > slides.length) { currentSlideIndex = 1; }
+  if (n < 1) { currentSlideIndex = slides.length; }
 
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
 
-    slides[customSlideIndex - 1].style.display = "block";
-    dots[customSlideIndex - 1].className += " active";
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[currentSlideIndex - 1].style.display = "block";
+  dots[currentSlideIndex - 1].className += " active";
+}
+
+/* CART PAGE */
+let openShopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+let list = document.querySelector('.list');
+let listCard = document.querySelector('.listCard');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+
+openShopping.addEventListener('click', ()=>{
+    body.classList.add('active');
+})
+closeShopping.addEventListener('click', ()=>{
+    body.classList.remove('active');
+})
+
+let products = [
+    {
+        id: 1,
+        name: 'Black Shoulder Bag',
+        image: 'images/products/bag_1.png',
+        price: 40
+    },
+    {
+        id: 2,
+        name: 'Black Snake Skin Baguette Bag',
+        image: 'images/products/bag_2.png',
+        price: 40
+    },
+    {
+        id: 3,
+        name: 'Black Ruffle Bag',
+        image: 'images/products/bag_3.png',
+        price: 40
+    },
+    {
+        id: 4,
+        name: 'Black Box Bag',
+        image: 'images/products/bag_4.png',
+        price: 35
+    },
+];
+let listCards  = [];
+function initApp(){
+    products.forEach((value, key) =>{
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <img src="${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCard(${key})">Add To Cart</button>`;
+        list.appendChild(newDiv);
+    })
+}
+initApp();
+function addToCard(key){
+    if(listCards[key] == null){
+        // copy product form list to list card
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
+    }
+    reloadCard();
+}
+function reloadCard() {
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+
+    listCards.forEach((value, key) => {
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
+
+        if (value != null) {
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+            listCard.appendChild(newDiv);
+        }
+    });
+
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+
+function changeQuantity(key, quantity){
+    if(quantity == 0){
+        delete listCards[key];
+    }else{
+        listCards[key].quantity = quantity;
+        listCards[key].price = quantity * products[key].price;
+    }
+    reloadCard();
 }
