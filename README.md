@@ -70,5 +70,18 @@ Wireframe PDF:
 
 Features similar to the **Login Page**
 
+
+
+## Cart Page Features
+**AIM:** I aim to give user a seamless and user friendly experience when they purchase my items
+
+1. **User friendly outlook** When users press the add to cart button the cart icon at the top navigation will update as well
+2. **User friendly Overview:** when users press on the cart icon they will get an overview of all the items that they have bought
+3. **Real-Time Total Updates:** Instantly update the total amount spent when users click the "Add" button, providing them with a dynamic and transparent view of their accumulating costs.
+
+
+
+
+
 # Credits
 Slideshow picture 1: Photo by [Trình Minh Thư](https://unsplash.com/photos/brown-leather-handbag-on-green-pine-tree-ScYGyGhA9HQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
