@@ -655,7 +655,7 @@ cursor: pointer;
 .demo {
     opacity: 0.8;
 }
-#small-product-pics, #item-small-product-pics{
+#small-product-pics, #item-small-product-pics, #mobile-small-product-pics, #mobile-item-small-product-pics{
     background-color: transparent;
     border: solid 1px;
     border-radius: 10px;
